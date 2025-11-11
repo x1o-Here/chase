@@ -29,7 +29,7 @@ export default function RootLayout({
       <body
         className={`
           ${geistSans.variable} ${geistMono.variable} antialiased
-          min-h-screen bg-background flex flex-col
+          min-h-screen bg-white flex flex-col
         `}
       >
         <TopBar />
