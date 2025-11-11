@@ -19,7 +19,7 @@ interface TransactionsListProps {
 
 export const TransactionsList = ({ transactions }: TransactionsListProps) => {
   return (
-    <Card>
+    <Card className="border-none shadow-lg">
       <CardHeader>
         <CardTitle>Recent Transactions</CardTitle>
       </CardHeader>
@@ -39,8 +39,8 @@ export const TransactionsList = ({ transactions }: TransactionsListProps) => {
                 className="flex items-center justify-between p-3 rounded-lg hover:bg-muted/50 transition-colors"
               >
                 <div className="flex items-center gap-3">
-                  <div className={`p-2 rounded-full ${isPositive ? 'bg-success/10' : 'bg-muted'}`}>
-                    <Icon className={`h-5 w-5 ${isPositive ? 'text-success' : 'text-muted-foreground'}`} />
+                  <div className={`p-2 rounded-full ${isPositive ? 'bg-success/10' : 'bg-success'}`}>
+                    <Icon className={`h-5 w-5 ${isPositive ? 'text-accent' : 'text-red-300'}`} />
                   </div>
                   <div>
                     <p className="font-medium text-sm">{transaction.title}</p>
