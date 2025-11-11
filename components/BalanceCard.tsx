@@ -44,15 +44,15 @@ export const BalanceCard = ({
   };
 
   return (
-    <Card className={`transition-all hover:shadow-md ${getVariantStyles()}`}>
+    <Card className={`transition-all border-none shadow-lg hover:shadow-md ${getVariantStyles()}`}>
       <CardHeader className="pb-2">
-        <CardTitle className="text-sm font-medium text-muted-foreground">
+        <CardTitle className="text-sm font-light text-muted-foreground">
           {title}
         </CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-1">
-          <p className={`text-2xl font-bold ${getAmountColor()}`}>
+          <p className={`text-3xl font-bold ${getAmountColor()}`}>
             {formatCurrency(amount)}
           </p>
           {subtitle && (

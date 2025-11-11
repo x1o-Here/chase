@@ -9,6 +9,7 @@ import { TransactionsList } from "@/components/TransactionsList";
 import { TransferDialog } from "@/components/TransferDialog";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import WalletCard from "@/components/WalletCard";
 import db from "@/lib/firebase";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { ArrowDownRight, ArrowUpRight, Repeat } from "lucide-react";
@@ -69,19 +70,13 @@ export default function Home() {
     fetchTransactions();
   }, []);
 
-  const quickActions = [
-    { icon: ArrowUpRight, label: "Send", variant: "default" as const, onClick: () => setSendDialogOpen(true) },
-    { icon: ArrowDownRight, label: "Receive", variant: "default" as const, onClick: () => setReceiveDialogOpen(true) },
-    { icon: Repeat, label: "Transfer", variant: "default" as const, onClick: () => setTransferDialogOpen(true) },
-  ];
-
   return (
-    <div className="container max-w-6xl mx-auto px-4 py-6 space-y-6">
-      <div className="min-h-screen bg-background flex flex-col space-y-6">
+    <div className="container max-w-6xl mx-auto bg-white px-4 py-6 space-y-6">
+      <div className="min-h-screen bg-white flex flex-col space-y-6">
         {/* Welcome Section */}
         <div className="space-y-2">
           <h1 className="text-2xl md:text-3xl font-bold">
-            Welcome back, {accountData.ownerName.split(' ')[0]}
+            Welcome back, {accountData.displayName}
           </h1>
           <p className="text-muted-foreground">
             Here's your financial overview
@@ -89,10 +84,16 @@ export default function Home() {
         </div>
 
         {/* Account Card */}
-        <AccountCard 
-          ownerName={accountData.ownerName}
-          accountNumber={accountData.accountNumber}
-        />
+        <div className="grid grid-cols-3 gap-x-4">
+          <AccountCard 
+            ownerName={accountData.ownerName}
+            accountNumber={accountData.accountNumber}
+            className="col-span-2"
+          />
+
+          <WalletCard 
+          />
+        </div>
 
         {/* Balance Overview */}
         <div className="grid gap-4 md:grid-cols-3">
@@ -114,28 +115,6 @@ export default function Home() {
             variant="warning"
           />
         </div>
-
-        {/* Quick Actions */}
-        <Card>
-          <CardHeader>
-            <CardTitle>Quick Actions</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-              {quickActions.map((action) => (
-                <Button
-                  key={action.label}
-                  variant="outline"
-                  className="h-auto flex-col gap-2 py-4 hover:bg-primary hover:text-primary-foreground transition-colors"
-                  onClick={action.onClick}
-                >
-                  <action.icon className="h-5 w-5" />
-                  <span className="text-sm font-medium">{action.label}</span>
-                </Button>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
 
         {/* Spending Chart */}
         <SpendingChart transactions={transactions} />
