@@ -3,9 +3,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { BanknoteArrowDown, BanknoteArrowUp } from "lucide-react";
 import { Button } from "./ui/button";
 
-export default function WalletCard() {
+interface WalletCardProps {
+    className?: string,
+}
+
+export default function WalletCard({ className }: WalletCardProps) {
     return (
-        <Card className={cn(`border-none py-4 gap-2 shadow-lg`)}>
+        <Card className={cn(`border-none py-4 gap-2 shadow-lg`, className)}>
             <CardHeader className="pb-3">
                 <CardTitle className="text-sm font-light">
                     ******2819

@@ -84,14 +84,15 @@ export default function Home() {
         </div>
 
         {/* Account Card */}
-        <div className="grid grid-cols-3 gap-x-4">
+        <div className="grid grid-cols-3 gap-x-4 gap-y-4">
           <AccountCard 
             ownerName={accountData.ownerName}
             accountNumber={accountData.accountNumber}
-            className="col-span-2"
+            className="col-span-3 lg:col-span-2"
           />
 
           <WalletCard 
+            className="col-span-3 lg:col-span-1"
           />
         </div>
 
