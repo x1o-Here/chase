@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -47,7 +49,13 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2">
             <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">CB</span>
+              <Image
+                src="/octogon-white.avif"
+                alt="Octogon Icon"
+                width={32}
+                height={32}
+                className="rounded-lg object-cover"
+              />
             </div>
             <span className="text-sm text-muted-foreground">
               © {currentYear} Chase Bank. All rights reserved.
