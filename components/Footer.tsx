@@ -3,28 +3,16 @@ export const Footer = () => {
 
   const footerLinks = {
     "About Us": [
-      { label: "About Chase", href: "#" },
-      { label: "Careers", href: "#" },
-      { label: "Investor Relations", href: "#" },
-      { label: "Media Center", href: "#" },
-    ],
-    "Support": [
-      { label: "Help Center", href: "#" },
-      { label: "Contact Us", href: "#" },
-      { label: "Branch Locator", href: "#" },
-      { label: "Security Tips", href: "#" },
+      { label: "About Chase", href: "https://www.chase.com/digital/resources/about-chase" },
+      { label: "Careers", href: "https://www.jpmorganchase.com/careers" },
+      { label: "JPMorganChase", href: "https://www.jpmorganchase.com/" },
+      { label: "Media Center", href: "https://media.chase.com/" },
     ],
     "Legal": [
-      { label: "Terms & Conditions", href: "#" },
-      { label: "Privacy Policy", href: "#" },
-      { label: "Cookie Policy", href: "#" },
-      { label: "Accessibility", href: "#" },
-    ],
-    "Resources": [
-      { label: "Financial Education", href: "#" },
-      { label: "Mobile App", href: "#" },
-      { label: "Digital Banking Guide", href: "#" },
-      { label: "Fraud Protection", href: "#" },
+      { label: "Terms of Use", href: "https://www.chase.com/digital/resources/terms-of-use" },
+      { label: "Privacy", href: "https://www.chase.com/digital/resources/privacy-security/privacy/online-privacy-policy" },
+      { label: "Security", href: "https://www.chase.com/digital/resources/privacy-security" },
+      { label: "Accessibility", href: "https://www.chase.com/digital/resources/accessibility" },
     ],
   };
 
