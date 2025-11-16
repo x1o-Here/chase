@@ -9,7 +9,7 @@ interface ReceiveDialogProps {
 }
 
 export const ReceiveDialog = ({ open, onOpenChange }: ReceiveDialogProps) => {
-  const walletAddress = "john.anderson@chase.com";
+  const walletAddress = "muthula.alwis@gmail.com";
   const walletPhone = "+1 (555) 123-4567";
 
   const copyToClipboard = (text: string, type: string) => {
@@ -42,7 +42,7 @@ export const ReceiveDialog = ({ open, onOpenChange }: ReceiveDialogProps) => {
               </Button>
             </div>
           </div>
-          <div className="space-y-2">
+          {/* <div className="space-y-2">
             <p className="text-sm font-medium">Phone Number</p>
             <div className="flex items-center gap-2">
               <div className="flex-1 p-3 bg-muted rounded-md text-sm">
@@ -56,7 +56,7 @@ export const ReceiveDialog = ({ open, onOpenChange }: ReceiveDialogProps) => {
                 <Copy className="h-4 w-4" />
               </Button>
             </div>
-          </div>
+          </div> */}
           <p className="text-xs text-muted-foreground">
             Share either your email or phone number with the sender
           </p>

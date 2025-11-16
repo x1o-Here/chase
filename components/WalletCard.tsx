@@ -4,10 +4,12 @@ import { BanknoteArrowDown, BanknoteArrowUp } from "lucide-react";
 import { Button } from "./ui/button";
 
 interface WalletCardProps {
-    className?: string,
+    className?: string;
+    setSendDialogOpen: (open: boolean) => void;
+    setReceiveDialogOpen: (open: boolean) => void;
 }
 
-export default function WalletCard({ className }: WalletCardProps) {
+export default function WalletCard({ className, setSendDialogOpen, setReceiveDialogOpen }: WalletCardProps) {
     return (
         <Card className={cn(`border-none py-4 gap-2 shadow-lg`, className)}>
             <CardHeader className="pb-3">
@@ -27,6 +29,7 @@ export default function WalletCard({ className }: WalletCardProps) {
                     <Button
                         variant="outline"
                         className="h-auto flex rounded-full bg-black text-gray-100 hover:bg-gray-100 hover:text-black border-none transition-colors"
+                        onClick={() => setSendDialogOpen(true)}
                     >
                         <BanknoteArrowUp strokeWidth={1} />
                         <span className="text-sm font-light">Send</span>
@@ -35,6 +38,7 @@ export default function WalletCard({ className }: WalletCardProps) {
                     <Button
                         variant="outline"
                         className="h-auto flex rounded-full bg-blue-300 text-gray-900 hover:bg-gray-900 hover:text-gray-100 border-none transition-colors"
+                        onClick={() => setReceiveDialogOpen(true)}
                     >
                         <BanknoteArrowDown strokeWidth={1} />
                         <span className="text-sm font-light">Receive</span>

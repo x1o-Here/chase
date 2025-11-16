@@ -9,9 +9,10 @@ interface AccountCardProps {
   ownerName: string;
   accountNumber: string;
   className?: string;
+  setTransferDialogOpen: (open: boolean) => void;
 }
 
-export const AccountCard = ({ ownerName, accountNumber, className }: AccountCardProps) => {
+export const AccountCard = ({ ownerName, accountNumber, className, setTransferDialogOpen }: AccountCardProps) => {
   const maskedNumber = `****${accountNumber.slice(-4)}`;
 
   const handleCopy = async () => {
@@ -54,6 +55,7 @@ export const AccountCard = ({ ownerName, accountNumber, className }: AccountCard
         <Button
           variant="outline"
           className="w-full h-auto flex rounded-full bg-black text-gray-100 hover:bg-gray-100 hover:text-black border-none transition-colors"
+          onClick={() => setTransferDialogOpen(true)}
         >
           <Repeat strokeWidth={1} />
           <span className="text-sm font-light">Transfer</span>

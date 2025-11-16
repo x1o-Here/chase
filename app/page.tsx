@@ -89,10 +89,14 @@ export default function Home() {
             ownerName={accountData.ownerName}
             accountNumber={accountData.accountNumber}
             className="col-span-3 lg:col-span-2"
+            setTransferDialogOpen={setTransferDialogOpen}
           />
 
           <WalletCard 
             className="col-span-3 lg:col-span-1"
+            setSendDialogOpen={setSendDialogOpen}
+            setReceiveDialogOpen={setReceiveDialogOpen}
+
           />
         </div>
 
