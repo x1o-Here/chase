@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 import { Bell, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { NavLink } from "./NavLink";
+import Image from "next/image";
 
 const navigationItems = [
   { name: "Portfolio", path: "/" },
@@ -22,8 +23,14 @@ export const TopBar = () => {
         <div className="w-full container flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">CB</span>
+              <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center overflow-hidden">
+                <Image
+                  src="/octogon-white.avif"
+                  alt="Octogon Icon"
+                  width={32}
+                  height={32}
+                  className="rounded-lg object-cover"
+                />
               </div>
               <span className="font-bold text-lg hidden sm:inline-block">Chase Bank</span>
             </div>
@@ -44,10 +51,10 @@ export const TopBar = () => {
           </div>
           
           <div className="flex items-center gap-2">
-            <Button variant="ghost" size="icon" className="relative">
+            {/* <Button variant="ghost" size="icon" className="relative">
               <Bell className="h-5 w-5" />
               <span className="absolute top-1 right-1 h-2 w-2 rounded-full bg-accent" />
-            </Button>
+            </Button> */}
             
             {/* Mobile Menu Button */}
             <Button
